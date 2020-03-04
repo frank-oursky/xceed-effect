@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>XCEPT - TEST</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-3 loading">
+		<svg class="hidden">
+			
+			<symbol id="icon-arrow-nav" viewBox="208.3 352 4.2 6.4">
+				<title>arrow-nav</title>
+				<polygon points="212.1,357.3 211.5,358 208.7,355.1 211.5,352.3 212.1,353 209.9,355.1"></polygon>
+			</symbol>
+		</svg>
+
+		<div class="strobes">
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-col"></div>
+					<div class="strobe-x1"></div>
+					<div class="strobe-x2"></div>
+				</div>		
+
+
+		<main class="site-wrapper">
+			<div class="content content--fixed">
+
+			</div>
+			<div class="content">
+				<div class="slide-wrapper">
+					<div class="slide-item">
+						<video src="img/1.mp4" class="slide-item__image">
+						
+					</div>
+					<div class="slide-item">
+						<video src="img/2.mp4" class="slide-item__image">
+
+						
+					</div>
+								
+				</div>
+				<button class="scene-nav scene-nav--prev" data-nav="previous"><svg class="icon icon--arrow-nav-prev"><use xlink:href="#icon-arrow-nav"></use></svg></button>
+				<button class="scene-nav scene-nav--next" data-nav="next"><svg class="icon icon--arrow-nav-next"><use xlink:href="#icon-arrow-nav"></use></svg></button>	
+
+
+				<div class="tagcontents">
+						<div><h1>Large Title</h1>
+						<p>subtitle 2017</p>
+						</div>
+				</div>
+
+					
+			</div>
+
+			<div class="main__content__container">
+				</div>
+			<!--<video id="video" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" controls="false" style="position: fixed;z-index: 9999; right:0; bottom:0;"></video>-->
+		</main>
+
+		
+
+		<script src="js/demo.js"></script>
+		<script src="js/pixi.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/main3.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+
+		<script src="js/jquery.js"></script>
+
+
+		<script>
+			
+
+
+			//imagesLoaded(document.body, () => document.body.classList.remove('loading'));
+			
+			var spriteImages = document.querySelectorAll( '.slide-item__image' );
+			var spriteImagesSrc = [];
+			var texts = [];
+
+			
+			
+			
+
+
+			for ( var i = 0; i < spriteImages.length; i++ ) {
+
+
+
+				var img = spriteImages[i];
+
+				var vidname = 'vid' + i;
+
+				PIXI.loader.add(vidname,img.getAttribute('src'));
+
+
+
+			
+
+
+				// Set the texts you want to display to each slide 
+				// in a sibling element of your image and edit accordingly
+				if ( img.nextElementSibling ) {
+					texts.push(img.nextElementSibling.innerHTML);
+				} else {
+					texts.push('');
+				}
+				spriteImagesSrc.push( img.getAttribute('src' ) );
+				
+
+			}
+
+			PIXI.loader.load(onPreloadComplete);
+				function onPreloadComplete (loader, resources) {
+				document.body.classList.remove('loading');
+
+				var initCanvasSlideshow = new CanvasSlideshow({
+				sprites: spriteImagesSrc,
+				displacementImage: 'img/dmaps/512x512/clouds.jpg',
+				autoPlay: false,
+				displaceScale: [800, 70],
+				//autoPlaySpeed: [0.1, 0.1],
+				centerSprites: true
+				
+				}, resources);
+
+				
+
+
+
+			};
+
+
+
+			$( document ).ready(function() {
+
+				$( ".icon--arrow-nav-next" ).click(function() {
+					  $('.strobes').show();
+					  setTimeout(function() { 
+				       $('.strobes').hide();
+				    }, 1800);
+				});
+
+				$( ".icon--arrow-nav-prev" ).click(function() {
+					  $('.strobes').show();
+					  setTimeout(function() { 
+				       $('.strobes').hide();
+				    }, 1800);
+				});
+					
+			});
+
+
+
+			
+
+
+
+			  
+
+
+		</script>
+	</body>
+</html>
