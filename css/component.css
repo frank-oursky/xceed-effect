@@ -54,7 +54,6 @@ canvas {
 
 
 .tagcontents {
-	
     position: relative;
     z-index: 5;
     color: #fff;
@@ -76,6 +75,13 @@ canvas {
 	margin-bottom: 20px;
 }
 
+.tagcontents-taglines {
+	position: fixed;
+	top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+}
 
 
 .slide-wrapper {
@@ -139,7 +145,7 @@ canvas {
 }
 
 .main__content__container {
-	
+	padding: 200px 0;
 	position: relative;
 	left:0;
 	width: 100vw;
@@ -151,4 +157,17 @@ canvas {
 .main__content {
 	display: block;
 	position: relative;
+}
+
+.main__content p {
+	font-size: 20px;
+	line-height: 36px;
+}
+
+.main__content__row {
+	padding: 120px 0;
+}
+
+.main__content__row img {
+	width: 100%;
 }

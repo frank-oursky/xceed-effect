@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/aos.css" />
 		<script>document.documentElement.className = 'js';</script>
 	</head>
 	<body class="demo-3 loading">
@@ -59,8 +60,9 @@
 				<button class="scene-nav scene-nav--next" data-nav="next"><svg class="icon icon--arrow-nav-next"><use xlink:href="#icon-arrow-nav"></use></svg></button>	
 
 
-				<div class="tagcontents">
-						<div><h1>Large Title</h1>
+				<div class="tagcontents" id="mainTag">
+						<div class="tagcontents-taglines">
+						<h1>Large Title</h1>
 						<p>subtitle 2017</p>
 						</div>
 				</div>
@@ -68,11 +70,98 @@
 					
 			</div>
 
-			<div class="main__content__container">
-				</div>
+		
 			<!--<video id="video" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" controls="false" style="position: fixed;z-index: 9999; right:0; bottom:0;"></video>-->
 		</main>
 
+			<div class="main__content__container">
+					<div class="main__content">
+							<div class="grid-x grid-padding-x">
+									<div class="medium-8 medium-offset-2 cell">
+										<div data-aos="fade-up">
+											<p>Prismverse is an installation inspired by light rays travelling in a diamond with Brilliant cut – a form that produces phenomenal brilliance with maximized light directed through its top. </p>
+											<p>
+											With a 10 meters LED floor and the complex geometrical tessellated mirror wall, the highly illuminated interior becomes a metaphor for the instant tone-up effect of Dr.Jart+ V7 Toning Light.</p>
+										</div>
+									</div>
+							</div>
+							<div class="grid-x">
+									<div class="medium-10 cell">
+											<div class="main__content__row ">
+												<div data-aos="fade-up">
+												<img src="img/c1.jpg">
+												</div>
+											</div>
+									</div>
+									
+							</div>
+
+							<div class="grid-x">
+									<div class="medium-8 cell medium-offset-2">
+											<div class="main__content__row ">
+												<div data-aos="fade-left">
+												<h1>A journey to unprecedented sceneries of glimmers begins at the touch of the product centered in the space.
+												</h1>
+												</div>
+											</div>
+									</div>
+									<div class="medium-10 cell medium-offset-2">
+											<div class="main__content__row ">
+												<div data-aos="fade-up">
+												<img src="img/c2.jpg">
+												</div>
+											</div>
+									</div>
+							</div>
+
+							<div class="grid-x grid-padding-x">
+									<div class="medium-8 medium-offset-2 cell">
+										<div data-aos="fade-up">
+											<p>Audience will be immersed in splendors of our mother nature, ranging from the galaxy and distant stars, rare gemstones, glistens of flowing water, and refracted light beams. These resembles the brightening, moisturizing, protective and vitalizing effects of the product once applied on skin.
+											</p>
+											<p>
+											Thanks to the omnidirectional speaker ‘scenery’ produced by sonihouse, audience can be bathed in an ambient soundscape, where sound is equally distributed to every direction. Audience are most encouraged to pace around and explore brilliance of the world from all angles in Prismverse.
+											</p>
+										</div>
+									</div>
+							</div>
+
+							<div class="grid-x">
+									<div class="medium-10 cell">
+											<div class="main__content__row ">
+												<div data-aos="fade-up">
+												<img src="img/c3.jpg">
+												</div>
+											</div>
+									</div>
+									
+							</div>
+
+							<div class="grid-x">
+									<div class="medium-10 medium-offset-2 cell">
+											<div class="main__content__row ">
+												<div data-aos="fade-up">
+												<img src="img/c4.jpg">
+												</div>
+											</div>
+									</div>
+									
+							</div>
+
+
+							<div class="grid-x">
+									<div class="medium-10 cell">
+											<div class="main__content__row ">
+												<div data-aos="fade-up">
+												<img src="img/c5.jpg">
+												</div>
+											</div>
+									</div>
+									
+							</div>
+
+					</div>
+			</div>
 		
 
 		<script src="js/demo.js"></script>
@@ -82,6 +171,7 @@
 		<script src="js/imagesloaded.pkgd.min.js"></script>
 
 		<script src="js/jquery.js"></script>
+		
 
 
 		<script>
@@ -163,12 +253,14 @@
 				       $('.strobes').hide();
 				    }, 1800);
 				});
+
+				 setTimeout(function() { 
+				      $('#mainTag').trigger('click');
+				    }, 3000);
+
+				
 					
 			});
-
-
-
-			
 
 
 
@@ -176,5 +268,10 @@
 
 
 		</script>
+
+		<script src="js/aos.js"></script>
+		<script>
+		    AOS.init();
+		  </script>
 	</body>
 </html>

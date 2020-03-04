@@ -8,7 +8,7 @@
       /// ---------------------------      
       var that  =   this;
 
-
+      var Vplayed = 0;
       
       //  OPTIONS
       /// ---------------------------      
@@ -364,14 +364,33 @@
 
         button.on('pointertap', onPlayVideo);
 
+       // var tagcontent = document.getElementsByClassName("tagcontents");
+
+         document.getElementById("mainTag").onclick = function() {onPlayVideo();};
+
+        
+
+        
+         $(window).scroll(function() {
+          
+           if (Vplayed == 0) { 
+            onPlayVideo(); 
+            //console.log("eq 0");
+          };
+
+           console.log('body');
+           Vplayed = 1;
+        });
+
         //var cv = document.body.getElementById('canvas');
 
         //cv.on('pointertap', onPlayVideo);
-        
+
 
         function onPlayVideo() {
               // Don't need the button anymore
               button.destroy();
+             
               /*
               // create a video texture from a path
               const texture = PIXI.Texture.from('examples/assets/video.mp4');
